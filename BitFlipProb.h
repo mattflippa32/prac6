@@ -2,6 +2,7 @@
 #define BITFLIPPROB_H
 
 #include "Mutator.h"
+#include "Individual.h"
 
 class BitFlipProb : public Mutator {
     public:
