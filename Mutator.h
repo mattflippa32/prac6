@@ -5,7 +5,6 @@
 
 class Mutator {
     public:
-        Mutator();
         virtual Individual mutate(Individual parent, int k);
 
 };
