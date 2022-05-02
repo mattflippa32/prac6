@@ -15,7 +15,7 @@ Individual * execute(Individual * indPtr, Mutator * mPtr, int k) {
 }
 
 int main() {
-    /*BitFlip bf;
+    BitFlip bf;
     Mutator * mPtr1;
     mPtr1 = &bf;
 
@@ -45,9 +45,9 @@ int main() {
     string s1 = newString1->getString();
     string s2 = newString2->getString();
     int ones = newString2->getMaxOnes();
-    cout << s1 << " " << s2 << " " << ones << endl;*/
+    cout << s1 << " " << s2 << " " << ones << endl;
 
-    string binaryString = "01101110";
+    /*string binaryString = "01101110";
     Individual dna1(binaryString);
     string s1 = dna1.getString();
     cout<<s1<<endl;
@@ -62,15 +62,15 @@ int main() {
     Individual dna2 = bf.mutate(dna1, 5);
     string s2 = dna2.getString();
     cout<<s2<<endl;
-    /*Rearrange r;
-    Individual dna3 = r.mutate(dna2, 3);
+    Rearrange r;
+    Individual dna3 = r.mutate(dna1, 3);
     string s3 = dna3.getString();
-    cout<<s3<<endl;*/
+    cout<<s3<<endl;
     Individual dna4(10);
     BitFlipProb bfp(0.5);
     Individual dna5 = bfp.mutate(dna4, 1);
     string s5 = dna5.getString();
-    cout<<s5<<endl;
+    cout<<s5<<endl;*/
 
     return 0;
 }
