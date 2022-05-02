@@ -5,7 +5,7 @@
 
 class Mutator {
     public:
-        virtual Individual mutate(Individual parent, int k);
+        virtual Individual mutate(Individual parent, int k) = 0;
 
 };
 #endif //MUTATOR_H
