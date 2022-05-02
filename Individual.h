@@ -1,13 +1,12 @@
 #ifndef INDIVIDUAL_H
 #define INDIVIDUAL_H
 
-#include <vector>
 #include <string>
 
 class Individual {
     public:
         Individual(int length);
-        Individual(std::vector<int> binS);
+        Individual(std::string binS);
 
         std::string getString();
         int getBit(int pos);
@@ -16,6 +15,6 @@ class Individual {
         int getLength();
 
     private:
-        std::vector<int> binaryString;
+        std::string binaryString;
 };
 #endif //INDIVIDUAL_H

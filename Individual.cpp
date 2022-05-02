@@ -4,19 +4,15 @@
 #include <iterator>
 
 Individual::Individual(int length) {
-    binaryString.assign(length, 0);
+    binaryString.assign(length, '0');
 }
 
-Individual::Individual(std::vector<int> binS) {
+Individual::Individual(std::string binS) {
     binaryString = binS;
 }
 
 std::string Individual::getString() {
-    // method found online
-    std::stringstream result;
-    copy(binaryString.begin(), binaryString.end(), std::ostream_iterator<int>(result, ""));
-    std::string s = result.str();
-    return s;
+    return binaryString;
 }
 
 int Individual::getBit(int pos) {
@@ -27,8 +23,8 @@ int Individual::getBit(int pos) {
     if (pos < 1) {
         return -1;
     }
-
-    int value = binaryString.at(pos - 1);
+    char cBit = binaryString.at(pos - 1);
+    int value = cBit - '0';
     return value;
 }
 
@@ -41,11 +37,11 @@ void Individual::flipBit(int pos) {
         return;
     }
 
-    if (binaryString.at(pos - 1) == 0) {
-        binaryString[pos - 1] = 1;
+    if (binaryString.at(pos - 1) == '0') {
+        binaryString[pos - 1] = '1';
         return;
     }
-    binaryString[pos - 1] = 0;
+    binaryString[pos - 1] = '0';
     return;
 }
 
@@ -54,7 +50,7 @@ int Individual::getMaxOnes() {
     int current = 0;
     int length = binaryString.size();
     for (int i = 0; i < length; i++) {
-        if (binaryString[i] == 1) {
+        if (binaryString[i] == '1') {
             current++;
             if (current > max) {
                 max = current;

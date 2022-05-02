@@ -5,7 +5,8 @@ BitFlipProb::BitFlipProb(double prob) {
 }
 
 Individual BitFlipProb::mutate(Individual parent, int k) {
-    Individual offspring = parent;
+    std::string pString = parent.getString();
+    Individual offspring(pString);
 
     int length = offspring.getLength();
     double result = 0;

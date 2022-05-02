@@ -4,7 +4,7 @@
 #include "BitFlipProb.h"
 #include "Rearrange.h"
 #include <iostream>
-#include <vector>
+#include <string>
 
 using namespace std;
 
@@ -15,7 +15,7 @@ Individual * execute(Individual * indPtr, Mutator * mPtr, int k) {
 }
 
 int main() {
-    BitFlip bf;
+    /*BitFlip bf;
     Mutator * mPtr1;
     mPtr1 = &bf;
 
@@ -23,10 +23,15 @@ int main() {
     Mutator * mPtr2;
     mPtr2 = &ra;
 
-    vector<int> binaryString1 = {0,0,0,0,0,0};
-    vector<int> binaryString2 = {0,1,1,1};
-    int k1 = 2;
-    int k2 = 2;
+    string binaryString1;
+    string binaryString2;
+    int k1;
+    int k2;
+
+    cin >> binaryString1;
+    cin >> k1;
+    cin >> binaryString2;
+    cin >> k2;
 
     Individual parent1(binaryString1);
     Individual * iPtr1 = &parent1;
@@ -40,7 +45,32 @@ int main() {
     string s1 = newString1->getString();
     string s2 = newString2->getString();
     int ones = newString2->getMaxOnes();
-    cout << s1 << " " << s2 << " " << ones << endl;
+    cout << s1 << " " << s2 << " " << ones << endl;*/
+
+    string binaryString = "01101110";
+    Individual dna1(binaryString);
+    string s1 = dna1.getString();
+    cout<<s1<<endl;
+    dna1.flipBit(4);
+    int n = dna1.getBit(4);
+    cout<<n<<endl;
+    int ones = dna1.getMaxOnes();
+    int length = dna1.getLength();
+    cout<<ones<<" "<<length<<endl;
+
+    BitFlip bf;
+    Individual dna2 = bf.mutate(dna1, 5);
+    string s2 = dna2.getString();
+    cout<<s2<<endl;
+    /*Rearrange r;
+    Individual dna3 = r.mutate(dna2, 3);
+    string s3 = dna3.getString();
+    cout<<s3<<endl;*/
+    Individual dna4(10);
+    BitFlipProb bfp(0.5);
+    Individual dna5 = bfp.mutate(dna4, 1);
+    string s5 = dna5.getString();
+    cout<<s5<<endl;
 
     return 0;
 }
