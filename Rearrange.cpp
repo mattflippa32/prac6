@@ -4,7 +4,7 @@ Rearrange::Rearrange() {}
 
 Individual Rearrange::mutate(Individual parent, int k) {
     int length = parent.getLength();
-    k = k % length;
+    k = ((k - 1) % length) + 1;
     int index = k - 1;
 
     std::string copy = parent.getString();

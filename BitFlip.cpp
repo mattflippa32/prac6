@@ -4,7 +4,7 @@ BitFlip::BitFlip() {}
 
 Individual BitFlip::mutate(Individual parent, int k) {
     int length = parent.getLength();
-    k = k % length;
+    k = ((k - 1) % length) + 1;
 
     Individual offspring = parent;
     offspring.flipBit(k);
